@@ -57,29 +57,29 @@ public class GameManager : MonoBehaviour
 		{
 			menuPrincipal.SetActive(false);
 			
-			fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0.02f, 0) * Time.deltaTime;
+			//fondo.material.mainTextureOffset = fondo.material.mainTextureOffset + new Vector2(0.02f, 0) * Time.deltaTime;
     
 			//Mover Mapa (Personalizado)
 			for (int i=0; i < cols.Count; i++)
 			{
-				if (cols[i].transform.position.x <= -15)
+				/*if (cols[i].transform.position.x <= -5)
 				{
 				cols[i].transform.position = new Vector3(15, -6, 0);
 				}
 			
 				cols[i].transform.position = cols[i].transform.position + new Vector3(-2,0,0) * Time.deltaTime * velocidad;
-			}
+			*/}
 		
 			//Mover Piedras (Personalizado)
 			for (int i=0; i < obstaculos.Count; i++)
 			{
-				if (obstaculos[i].transform.position.x <= -15)
+				/*if (obstaculos[i].transform.position.x <= -15)
 				{
 					float randomObs = Random.Range(11, 18);
 					obstaculos[i].transform.position = new Vector3(randomObs, -4, 0);
 				}
-			
-				obstaculos[i].transform.position = obstaculos[i].transform.position + new Vector3(-2,0,0) * Time.deltaTime * velocidad;
+			*/
+				//obstaculos[i].transform.position = obstaculos[i].transform.position + new Vector3(-2,0,0) * Time.deltaTime * velocidad;
 			}
 		}
 	}

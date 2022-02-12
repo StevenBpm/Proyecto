@@ -658,7 +658,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478171377}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fcc14aef8aeb2eb4882f193ff2871d14, type: 2}
   m_CullingMode: 0
@@ -728,8 +728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34cb35d18757f9c4bbd1f8161164496b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerzaSalto: 450
-  gameManager: {fileID: 2039707900}
+  moveSpeed: 7.5
+  theRB: {fileID: 478171382}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

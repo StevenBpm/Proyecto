@@ -4,29 +4,39 @@ using UnityEngine;
 
 public class Jugador : MonoBehaviour
 {
-	public float fuerzaSalto;
+	/*public float fuerzaSalto;
 	public GameManager gameManager;
 	
-	private Rigidbody2D rigidbody2D;
+	//private Rigidbody2D rigidbody2D;
 	private Animator animator;
     // Start is called before the first frame update
+
+*/
+    public float moveSpeed;
+    public Rigidbody2D theRB;
+
     void Start()
     {
-        animator = GetComponent<Animator>();
+       /* animator = GetComponent<Animator>();
 		rigidbody2D = GetComponent<Rigidbody2D>();
-    }
+    */}
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
 		{
 			animator.SetBool("estaSaltando", true);
 			rigidbody2D.AddForce(new Vector2(0, fuerzaSalto));
 		}
+    */
+    
+    theRB.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"),theRB.velocity.y);
+    
+    
     }
 	
-	private void OnCollisionEnter2D(Collision2D collision)
+	/*private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Suelo")
         {
@@ -37,5 +47,5 @@ public class Jugador : MonoBehaviour
 		{
 			gameManager.gameOver = true;
 		}
-    }
+    }*/
 }
