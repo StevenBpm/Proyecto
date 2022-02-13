@@ -8,17 +8,21 @@ public class Jugador : MonoBehaviour
 	public GameManager gameManager;
 	
 	//private Rigidbody2D rigidbody2D;
-	private Animator animator;
+	
     // Start is called before the first frame update
 
 */
     public float moveSpeed;
+    public float salto;
     public Rigidbody2D theRB;
+    private Animator animator;
+    private SpriteRenderer theSR;
 
     void Start()
     {
-       /* animator = GetComponent<Animator>();
-		rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        theSR = GetComponent<SpriteRenderer>();
+		/*rigidbody2D = GetComponent<Rigidbody2D>();
     */}
 
     // Update is called once per frame
@@ -31,9 +35,26 @@ public class Jugador : MonoBehaviour
 		}
     */
     
-    theRB.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"),theRB.velocity.y);
+        theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"),theRB.velocity.y);
+        if (Input.GetButtonDown("Jump") && CheckGround.isGrounded)
+        {
+            theRB.velocity = new Vector2(theRB.velocity.x, salto);
+        }
+        
+        if(theRB.velocity.x < 0)
+        {
+            theSR.flipX = true;
+        }else if(theRB.velocity.x > 0)
+        {
+            theSR.flipX = false;
+        }
+
+
+        animator.SetFloat("moveSpeed", Mathf.Abs(theRB.velocity.x));
+        animator.SetBool("isGrounded", CheckGround.isGrounded);
+
     
-    
+
     }
 	
 	/*private void OnCollisionEnter2D(Collision2D collision)
