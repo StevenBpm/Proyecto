@@ -28,9 +28,9 @@ public class GameManager : MonoBehaviour
 		}
 		
 		//Crear Piedras (Personalizado)
-		obstaculos.Add(Instantiate(piedra1, new Vector2(14,-4), Quaternion.identity));
+		/*obstaculos.Add(Instantiate(piedra1, new Vector2(14,-4), Quaternion.identity));
 		obstaculos.Add(Instantiate(piedra2, new Vector2(25,-4), Quaternion.identity));
-    }
+    */}
 
     // Update is called once per frame
     void Update()

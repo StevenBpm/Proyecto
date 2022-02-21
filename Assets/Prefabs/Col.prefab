@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 396707848142549108}
   - component: {fileID: 396707848142549109}
-  m_Layer: 0
+  - component: {fileID: 1332684503218464703}
+  m_Layer: 7
   m_Name: Map_7
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,6 +83,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1332684503218464703
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396707848142549111}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0666667, y: 1.0666667}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0666667, y: 1.0666667}
+  m_EdgeRadius: 0
 --- !u!1 &396707848390907119
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,9 +119,9 @@ GameObject:
   m_Component:
   - component: {fileID: 396707848390907116}
   - component: {fileID: 396707848390907117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Map_11
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,7 +202,7 @@ GameObject:
   - component: {fileID: 396707849413947452}
   - component: {fileID: 396707849413947453}
   - component: {fileID: 396707849413947842}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Top
   m_TagString: Suelo
   m_Icon: {fileID: 0}
@@ -282,9 +309,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 396707849458612138}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Col
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,7 +324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396707849458612133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.04, y: 0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 396707849413947452}
