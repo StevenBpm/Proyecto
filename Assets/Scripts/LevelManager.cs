@@ -37,9 +37,13 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(waitToRespawn);
 
         Jugador.instance.gameObject.SetActive(true);
+        
         Jugador.instance.transform.position = CheckpointController.instance.spawnPoint;
 
         PlayerHealthController.instance.currentHealth = PlayerHealthController.instance.maxHealth;
+        UIController.instance.UpdateHealthDisplay();
+
+        
     }
 
 }
