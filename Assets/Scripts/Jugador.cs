@@ -13,18 +13,22 @@ public class Jugador : MonoBehaviour
 
 */
     public static Jugador instance;
+   
     public float moveSpeed;
     public float salto;
-    public Rigidbody2D theRB;
     public Transform groundCheckpoint;
-    public LayerMask whatIsGround;
     private bool isGrounded;
+
+    public Rigidbody2D theRB;
+    public LayerMask whatIsGround;
     private Animator animator;
     private SpriteRenderer theSR;
 
     public float KnockbackLength, knockBackForce;
     private float knockBackCounter;
     
+
+    public bool stopInput; //dejar de mover al jugador
 
     private void Awake()
     {
@@ -47,15 +51,21 @@ public class Jugador : MonoBehaviour
 			rigidbody2D.AddForce(new Vector2(0, fuerzaSalto));
 		}
     */
-        if(knockBackCounter <=0)
+        if (!stopInput)
+        {
+
+            if(knockBackCounter <=0)
         {
 
             theRB.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"),theRB.velocity.y);
             isGrounded = Physics2D.OverlapCircle(groundCheckpoint.position, 2f, whatIsGround);
 
-            if (Input.GetButtonDown("Jump") && isGrounded)
-            {
-                theRB.velocity = new Vector2(theRB.velocity.x, salto);
+            if (Input.GetButtonDown("Jump"))
+            {   
+                if(isGrounded){
+                       theRB.velocity = new Vector2(theRB.velocity.x, salto); 
+                }
+                
             }
             
             if(theRB.velocity.x < 0)
@@ -74,6 +84,8 @@ public class Jugador : MonoBehaviour
                 theRB.velocity = new Vector2(+knockBackForce, theRB.velocity.y);
             }
         }
+        }
+        
 
         animator.SetFloat("moveSpeed", Mathf.Abs(theRB.velocity.x));
         animator.SetBool("isGrounded", isGrounded);
